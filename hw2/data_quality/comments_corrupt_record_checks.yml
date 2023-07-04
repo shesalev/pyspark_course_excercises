@@ -1,0 +1,5 @@
+checks for comments:
+  - row_count > 0
+  - missing_percent(comment_text) < 50%
+  # - invalid_percent(comment_text) < 5%:
+  #     valid regex: /^[а-яА-ЯёЁa-zA-Z0-9 ]+$/

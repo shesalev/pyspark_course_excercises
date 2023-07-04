@@ -1,0 +1,15 @@
+checks for comments:
+  - schema:
+      fail:
+        when required column missing: [video_id, comment_text, likes, replies]
+        when wrong column type:
+          video_id: varchar
+          comment_text: varchar
+          likes: int
+          replies: int
+  - min(likes) >= 0
+  - max(likes) > 0
+  - min(replies) >= 0
+  - max(replies) > 0
+  - invalid_count(video_id) = 0:
+      valid regex: (?=^.{11}$)^[a-zA-Z0-9_-]+$
